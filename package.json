@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "A simple REST API built with Express for Node.js. Provides basic CRUD functionality and support for HTTP requests, route handling, and input validation.",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
