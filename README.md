@@ -1,20 +1,65 @@
-# simple-express-api
+# Simple Express API
+This repository contains a simple REST API built with Express, a popular web framework for Node.js. The API allows users to perform basic CRUD (create, read, update, delete) operations on a resource representing a user. It includes support for HTTP requests, route handling, and input validation.
 
-## Englisch Description
-This repository contains a simple REST API built with Express, a popular web framework for Node.js. The API allows users to perform basic CRUD (create, read, update, delete) operations on a resource. It includes support for HTTP requests, route handling, and input validation.
+## Features
+- Endpoints for managing users:
+  - GET /users: retrieves a list of all users
+  - GET /users/:id: retrieves a specific user by ID
+  - POST /users: creates a new user
+  - PUT /users/:id: updates an existing user
+  - DELETE /users/:id: deletes a user
+- Validates user input to ensure that required fields are present
+- Uses cors to allow cross-origin requests
+- Uses dotenv to load environment variables from a .env file
 
-The API can be easily modified and extended to meet the needs of your application. It serves as a good starting point for anyone looking to build a REST API with Express.
+## Prerequisites
+  - Node.js
+  - npm (should be installed with Node.js)
 
-## German Beschreibung
-Dieses Repository enthält eine einfache REST-API, die mit Express, einem populären Webframework für Node.js, erstellt wurde. Die API ermöglicht es Benutzern, grundlegende CRUD-Operationen (Erstellen, Lesen, Aktualisieren, Löschen) auf einer Ressource durchzuführen. Sie unterstützt HTTP-Anfragen, Routenverarbeitung und Eingabevalidierung.
+## Installation
+1. Clone or download this repository
+2. Navigate to the root directory of the project
+3. Install dependencies by running npm install
+4. Create a .env file in the root directory and set the PORT environment variable (e.g. PORT=3001)
+4. Start the API by running npm start
 
-Die API kann leicht angepasst und erweitert werden, um den Anforderungen Ihrer Anwendung gerecht zu werden. Sie eignet sich als guter Ausgangspunkt für alle, die eine REST-API mit Express erstellen möchten.
+## Usage
 
-First Steps
------------
+You can use the following examples to interact with the API using [cURL|https://curl.haxx.se/]:
 
-1. Install all Packages with `npm install`
-2. Change .env.dist to .env and change the values
-    - mv .env.dist .env
-    - and change the values, when you nead it
-    - the default port is on 3001, so when the server runs beside a other project you dont mess up with two projects on Port 3000 ;)
+### Get a list of all users
+```
+curl -X GET http://localhost:3001/users
+```
+### Get a specific user by ID
+```
+curl -X GET http://localhost:3001/users/1
+```
+
+### Create a new user
+```
+curl -X POST -H "Content-Type: application/json" -d '{
+  "name": {
+    "first": "Jane",
+    "last": "Doe"
+  },
+  "email": "jane.doe@example.com",
+  "password": "123456"
+}' http://localhost:3001/users
+```
+
+### Update an existing user
+```
+curl -X PUT -H "Content-Type: application/json" -d '{
+  "name": {
+    "first": "John",
+    "last": "Smith"
+  },
+  "email": "john.smith@example.com"
+}' http://localhost:3001/users/1
+```
+
+### Delete a user
+```
+curl -X DELETE http://localhost:3001/users/1
+```
