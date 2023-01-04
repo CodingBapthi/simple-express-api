@@ -106,6 +106,12 @@ app.delete('/users/:id', (req, res) => {
     users = users.filter(user => user.id !== id);
     res.status(204).end();
 });
+// Check on unknown routes/endpoints
+const unknownEndpoint = (req, res) => {
+    res.status(404).send({error: 'Unknown endpoint'});
+}
+app.use(unknownEndpoint);
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 })
