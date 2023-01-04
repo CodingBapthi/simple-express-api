@@ -1,0 +1,23 @@
+{
+  "name": "simple-express-api",
+  "version": "0.1.0",
+  "description": "A simple REST API built with Express for Node.js. Provides basic CRUD functionality and support for HTTP requests, route handling, and input validation.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingBapthi/simple-express-api.git"
+  },
+  "author": "S.H.Tittel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodingBapthi/simple-express-api/issues"
+  },
+  "homepage": "https://github.com/CodingBapthi/simple-express-api#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
