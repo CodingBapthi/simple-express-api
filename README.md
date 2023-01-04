@@ -10,3 +10,11 @@ Dieses Repository enthält eine einfache REST-API, die mit Express, einem popul�
 
 Die API kann leicht angepasst und erweitert werden, um den Anforderungen Ihrer Anwendung gerecht zu werden. Sie eignet sich als guter Ausgangspunkt für alle, die eine REST-API mit Express erstellen möchten.
 
+First Steps
+-----------
+
+1. Install all Packages with `npm install`
+2. Change .env.dist to .env and change the values
+    - mv .env.dist .env
+    - and change the values, when you nead it
+    - the default port is on 3001, so when the server runs beside a other project you dont mess up with two projects on Port 3000 ;)
